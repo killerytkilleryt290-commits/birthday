@@ -1,0 +1,153 @@
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0d0b0a;
+  --bg2:#17120f;
+  --cream:#f8f1e7;
+  --muted:#b9aaa0;
+  --gold:#d8ae67;
+  --gold2:#f1d19a;
+  --rose:#c98578;
+  --line:rgba(241,209,154,.16);
+}
+html{scroll-behavior:smooth}
+body{
+  background:radial-gradient(circle at 50% -10%,#342319 0%,var(--bg) 42%);
+  color:var(--cream);
+  font-family:"DM Sans",sans-serif;
+  overflow-x:hidden;
+}
+body:before{
+  content:"";position:fixed;inset:0;pointer-events:none;opacity:.08;
+  background-image:radial-gradient(#fff 1px,transparent 1px);
+  background-size:42px 42px;
+}
+.hidden{display:none}
+.intro{
+  min-height:100vh;display:grid;place-items:center;padding:30px;
+  position:relative;overflow:hidden;
+}
+.intro-glow{
+  position:absolute;width:620px;height:620px;border-radius:50%;
+  background:radial-gradient(circle,rgba(216,174,103,.18),transparent 67%);
+  filter:blur(10px);animation:pulse 5s ease-in-out infinite;
+}
+.intro-card{
+  position:relative;z-index:2;width:min(690px,100%);padding:72px 52px;
+  text-align:center;border:1px solid var(--line);
+  background:linear-gradient(145deg,rgba(35,26,20,.88),rgba(13,11,10,.94));
+  box-shadow:0 40px 100px rgba(0,0,0,.55),inset 0 1px rgba(255,255,255,.05);
+  backdrop-filter:blur(20px);border-radius:28px;
+}
+.tiny-label,.eyebrow,.mini-label,.card-top{
+  letter-spacing:.24em;font-size:10px;color:var(--gold2);font-weight:700;
+}
+.crown{font-size:54px;color:var(--gold2);margin:24px 0 12px}
+.intro h1,.hero h2,.section-heading h2,.quote-section p,.dua-card h2,footer h2{
+  font-family:"Playfair Display",serif;
+}
+.intro h1{font-size:clamp(45px,8vw,78px);line-height:.98;margin:10px 0 24px}
+.intro h1 span,.hero h2 span{color:var(--gold2);font-style:italic}
+.intro-copy{color:var(--muted);max-width:480px;margin:auto;line-height:1.8}
+.vip-btn,.gold-btn{
+  border:1px solid rgba(241,209,154,.45);background:linear-gradient(135deg,#f1d19a,#c9964f);
+  color:#20150c;font-weight:800;letter-spacing:.13em;padding:17px 24px;border-radius:999px;
+  cursor:pointer;transition:.3s;box-shadow:0 12px 35px rgba(216,174,103,.18);
+}
+.vip-btn{margin:34px 0 16px;width:min(360px,100%)}
+.vip-btn b{margin-left:18px;font-size:18px}
+.vip-btn:hover,.gold-btn:hover{transform:translateY(-3px);box-shadow:0 18px 45px rgba(216,174,103,.3)}
+.hint{font-size:11px;color:#786e67}
+.topbar{
+  max-width:1200px;margin:auto;padding:28px 28px;display:flex;justify-content:space-between;
+  align-items:center;border-bottom:1px solid var(--line)
+}
+.brand{font-weight:800;letter-spacing:.15em;font-size:12px}.brand span{color:var(--rose)}
+.hero{
+  min-height:680px;max-width:1200px;margin:auto;padding:95px 28px;
+  display:grid;grid-template-columns:1.1fr .9fr;gap:70px;align-items:center;
+}
+.hero h2{font-size:clamp(56px,8vw,105px);line-height:.93;margin:18px 0 28px}
+.hero-text{color:var(--muted);font-size:17px;line-height:1.9;max-width:610px}
+.hero-text strong{color:var(--gold2)}
+.gold-btn{margin-top:34px}
+.birthday-card{
+  min-height:480px;border:1px solid rgba(241,209,154,.3);border-radius:26px;
+  padding:50px 42px;display:flex;flex-direction:column;justify-content:center;
+  text-align:center;position:relative;overflow:hidden;
+  background:linear-gradient(145deg,#2b211a,#120f0d);
+  box-shadow:0 35px 90px rgba(0,0,0,.4);
+}
+.card-shine{position:absolute;inset:-100%;background:linear-gradient(120deg,transparent 40%,rgba(255,255,255,.07) 50%,transparent 60%);transform:rotate(8deg);animation:shine 6s linear infinite}
+.card-icon{font-size:72px;color:var(--gold2);margin:25px 0}
+.birthday-card h3{font:600 39px/1.1 "Playfair Display",serif}
+.birthday-card h3 span{color:var(--gold2)}
+.birthday-card p{color:var(--muted);margin:20px 0}
+.card-line{height:1px;background:var(--line);width:100px;margin:18px auto}
+.card-sign{font-size:11px;letter-spacing:.2em;color:var(--gold2);text-transform:uppercase}
+.compliments{max-width:1200px;margin:auto;padding:80px 28px}
+.section-heading{text-align:center;max-width:700px;margin:0 auto 55px}
+.section-heading h2{font-size:clamp(40px,6vw,65px);margin:15px 0}
+.section-heading p{color:var(--muted);line-height:1.7}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.feature-card{
+  min-height:280px;padding:30px;border:1px solid var(--line);border-radius:20px;
+  background:rgba(255,255,255,.025);position:relative;transition:.3s;
+}
+.feature-card:hover{transform:translateY(-8px);border-color:rgba(241,209,154,.38)}
+.feature-card.featured{background:linear-gradient(145deg,rgba(216,174,103,.13),rgba(255,255,255,.025))}
+.number{position:absolute;right:20px;top:18px;color:#62554a;font-size:11px}
+.feature-icon{font-size:30px;color:var(--gold2);margin:25px 0 30px}
+.feature-card h3{font:600 25px "Playfair Display",serif;margin-bottom:14px}
+.feature-card p{color:var(--muted);font-size:14px;line-height:1.7}
+.quote-section{
+  max-width:900px;margin:50px auto 120px;padding:80px 35px;text-align:center;
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line)
+}
+.quote-mark{font:100px/0 "Playfair Display",serif;color:var(--gold);opacity:.7}
+.quote-section p{font-size:clamp(28px,4vw,48px);line-height:1.2;margin:35px 0}
+.quote-section span{color:var(--gold2);font-size:12px;letter-spacing:.18em}
+.dua-section{max-width:1100px;margin:auto;padding:0 28px 100px}
+.dua-card{
+  border:1px solid var(--line);border-radius:25px;padding:55px;display:flex;gap:35px;align-items:center;
+  background:linear-gradient(110deg,rgba(201,133,120,.12),rgba(216,174,103,.08));
+}
+.dua-icon{font-size:55px;color:var(--gold2)}
+.dua-card h2{font-size:38px;margin:12px 0}
+.dua-card p{color:var(--muted);line-height:1.8;max-width:800px}
+footer{text-align:center;padding:110px 25px;border-top:1px solid var(--line)}
+.footer-heart{font-size:50px;color:var(--rose)}
+footer h2{font-size:58px;margin:15px 0}
+footer p{color:var(--muted);margin-bottom:15px}
+footer strong{color:var(--gold2)}
+.footer-year{margin-top:55px;font-size:10px;letter-spacing:.2em;color:#6d625b}
+.modal{position:fixed;inset:0;display:none;place-items:center;padding:20px;z-index:20}
+.modal.show{display:grid}
+.modal-backdrop{position:absolute;inset:0;background:rgba(0,0,0,.78);backdrop-filter:blur(10px)}
+.modal-box{
+  position:relative;z-index:2;max-width:700px;padding:55px;border-radius:26px;
+  border:1px solid rgba(241,209,154,.3);background:#18120f;
+  box-shadow:0 35px 100px rgba(0,0,0,.65)
+}
+.close{position:absolute;right:20px;top:15px;border:0;background:none;color:var(--muted);font-size:30px;cursor:pointer}
+.modal-icon{font-size:48px;color:var(--rose);margin-bottom:15px}
+.modal-box h2{font:600 45px "Playfair Display",serif;margin:15px 0 25px}
+.modal-box p{color:var(--muted);line-height:1.9;margin:14px 0}
+.modal-box strong{color:var(--gold2)}
+.signature{margin-top:30px;color:var(--gold2);font:600 22px "Playfair Display",serif}
+.spark{position:fixed;width:4px;height:4px;background:#f1d19a;border-radius:50%;pointer-events:none;animation:fall linear forwards;z-index:30}
+@keyframes fall{to{transform:translateY(110vh) rotate(720deg);opacity:0}}
+@keyframes pulse{50%{transform:scale(1.08);opacity:.7}}
+@keyframes shine{to{transform:translate(80%,80%) rotate(8deg)}}
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr;gap:45px;padding-top:65px}
+  .birthday-card{min-height:400px}
+  .cards{grid-template-columns:1fr 1fr}
+}
+@media(max-width:600px){
+  .intro-card{padding:50px 25px}.intro h1{font-size:48px}
+  .hero h2{font-size:58px}.topbar{padding:20px}
+  .mini-label{display:none}.cards{grid-template-columns:1fr}
+  .dua-card{padding:35px 25px;display:block}.dua-icon{margin-bottom:20px}
+  .dua-card h2{font-size:31px}footer h2{font-size:45px}
+  .modal-box{padding:40px 25px}.modal-box h2{font-size:38px}
+}
